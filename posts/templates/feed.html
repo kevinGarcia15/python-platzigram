@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+        <div class="row">
+            {% for post in posts %}
+            <div class="col-lg-4 offset-lg-4">
+                <div class="media">
+                    <img class="mr-3 rounded-circle" src="{{ post.user.picture }}" alt="{{ post.user.name }}">
+                    <div class="media-body">
+                        <h5 class="mt-0">{{ post.user.name }}</h5>
+                        {{ post.timestamp }}
+                    </div>
+                </div>
+                <img class="img-fluid mt-3 border rounded" src="{{ post.photo }}" alt="{{ post.title }}">
+                <h6 class="ml-1 mt-1">{{ post.title }}</h6>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+  </body>
+</html>
